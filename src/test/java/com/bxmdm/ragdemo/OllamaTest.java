@@ -45,7 +45,7 @@ class OllamaTest {
 		EmbeddingResponse embeddingResponse = embeddingClient.call(
 				new EmbeddingRequest(List.of("Hello World", "World is big and salvation is near"),
 						OllamaOptions.create()
-								.withModel("qwen:7b")));
+								.withModel("qwen:0.5b")));
 		for (Embedding result : embeddingResponse.getResults()) {
 			System.out.println(Arrays.toString(result.getOutput().toArray()));
 		}

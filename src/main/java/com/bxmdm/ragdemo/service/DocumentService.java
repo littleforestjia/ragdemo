@@ -36,7 +36,10 @@ public class DocumentService {
 	@Autowired
 	private OllamaChatClient ollamaChatClient;
 
-	private static final String PATH = "D:\\demo\\ai\\path\\";
+	/**
+	 * 必须是服务部署容器中存在的路径，用来临时存储客户端上传的文件
+	 */
+	private static final String PATH = "/Users/jiazhengyang3/SuperSonic_deploy/";
 
 	/**
 	 * 使用spring ai解析txt文档
@@ -163,5 +166,16 @@ public class DocumentService {
 				%s
 				""";
 		return String.format(promptText, message, context);
+	}
+
+	/**
+	 * 直接与大模型对话
+	 *
+	 * @param message
+	 * @return
+	 */
+	public String chatNoKnowledge(String message) {
+		String chatResponse = ollamaChatClient.call(message);
+		return chatResponse;
 	}
 }

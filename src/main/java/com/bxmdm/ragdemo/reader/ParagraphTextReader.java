@@ -1,7 +1,6 @@
 package com.bxmdm.ragdemo.reader;
 
 import cn.hutool.core.collection.ListUtil;
-import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -119,7 +118,7 @@ public class ParagraphTextReader implements DocumentReader {
 				}
 			}
 			return readDocuments;
-		} catch (IOException e) {
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}

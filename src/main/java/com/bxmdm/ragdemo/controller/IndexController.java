@@ -44,5 +44,9 @@ public class IndexController {
 		return ResponseEntity.ok(documentService.chat(message));
 	}
 
-
+	@Operation(summary = "自然问答")
+	@GetMapping("/chatNoKnowledge")
+	public ResponseEntity chatNoKnowledge(@RequestParam String message) {
+		return ResponseEntity.ok(documentService.chatNoKnowledge(message));
+	}
 }

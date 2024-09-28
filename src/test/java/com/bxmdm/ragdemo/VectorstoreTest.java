@@ -1,5 +1,7 @@
 package com.bxmdm.ragdemo;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
@@ -17,10 +19,10 @@ public class VectorstoreTest {
 
 	@Test
 	public void pgvectorTest(){
-		List <Document> documents = List.of(
-				new Document("Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!!", Map.of("meta1", "meta1")),
+		List <Document> documents = Arrays.asList(
+				new Document("Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!!", Collections.singletonMap("meta1", "meta1")),
 				new Document("The World is Big and Salvation Lurks Around the Corner"),
-				new Document("You walk forward facing the past and you turn back toward the future.", Map.of("meta2", "meta2")));
+				new Document("You walk forward facing the past and you turn back toward the future.", Collections.singletonMap("meta2", "meta2")));
 
 // Add the documents to PGVector
 		vectorStore.add(documents);
